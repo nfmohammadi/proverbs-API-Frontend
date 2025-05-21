@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<h1>Afghan Proverbs & Sayings</h1>
+<div class="proverb-container">
+<% if (proverbs.length === 0) { %>
+    <p>No proverbs availabe. Try adding one!</p>
+<% } else { %>
+  <% if (success) { %>
+    <div class="feedback success"><%= success %></div>
+  <% } %>
+  <% if (error) { %>
+    <div class="feedback error"><%= error %></div>
+  <% } %>
+  
+  <ul class="proverbs-list">
+    <% proverbs.forEach(proverb => { %>
+        <li>
+            <div class="proverb"><%= proverb.textDari %><br></div>
+            <div class="preview">
+            <p><em>Pashto:</em> <%= proverb.textPashto %> </p>
+            <p></p><em>Translation:</em> <%= proverb.translation %> </p>
+            <p></p><em>Category:</em> <%= proverb.category %> </p>
+            <a class="detail-link" href="/proverbs/<%=  proverb.id %>">View Details</a>
+          </div>
+        </li>
+        
+    <% }); %>
+  </ul>
+<% } %>
+</div>
+<%- include('partials/footer') %>

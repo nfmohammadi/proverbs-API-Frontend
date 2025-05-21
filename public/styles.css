@@ -1,0 +1,295 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header {
+    position: relative;
+}
+
+#menu-toggle {
+    background-color: #f0f4f8;
+    border: none;
+    border-radius: 5px;
+    color: rgb(10, 9, 65);
+    cursor: pointer;
+    font-size: 22px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    width: 30px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 125px;
+    height: 100%;
+    background-color: #0a1b2e;
+    overflow-y: auto;
+    transition: transform 0.6s ease;
+    transform: translateX(-100%);
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding-top: 40px;
+    font-size: 12px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #aac9bb;
+}
+
+nav.visible {
+    transform: translateX(0);
+}
+
+ul.proverbs-list {
+    list-style: none;
+}
+ul.proverbs-list li {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+ul.proverbs-list li a {
+    color: #2c3e97;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+.proverb {
+    color: #624b8b;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.8;
+}
+.preview p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+
+}
+
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+
+input[type="text"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+
+
+.proverb-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+
+
+.confirmation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confirmation button {
+    margin-left: 10px;
+}
+
+
+
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .proverb-container {
+        padding: 15px;
+    }
+}
+
+/* Specific Page Styles */
+
+/* Edit Page */
+.edit-form {
+    background-color: #e3f2fd;
+    max-width: 600px;
+    margin: 30px auto;
+}
+.edit-form label {
+    color: #414775;
+    display: block;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+.edit-form input {
+    color: #555;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.update-btn {
+    background: #1e2b8e;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.update-btn:hover {
+    background: #2c3dbc;
+}
+
+
+
+.add-form {
+    background-color: #e3f2fd;
+    max-width: 600px;
+    margin: 30px auto;
+}
+.add-form label {
+    color: #414775;
+    display: block;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+.add-form input {
+    color: #555;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.add-btn {
+    background: #0f4931;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.add-btn:hover {
+    background: #19744e;
+}
+
+
+
+.single-proverb {
+    padding: 20px;
+    border-radius: 18px;
+    background-color: #0d1124;
+    color: white;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.delete-form {
+    background-color: #0d1124;
+}
+.delete-btn {
+    color: #0d1124;
+    background-color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.8s ease;
+}
+.delete-btn:hover {
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+}
+
+.redirect {
+    display: block;
+    float: right;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+.feedback {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+.feedback.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+  
+
+.feedback.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+  

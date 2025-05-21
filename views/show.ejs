@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<h1>Proverb Details</h1>
+<% if (success) { %>
+    <div class="feedback success"><%= success %></div>
+  <% } %>
+  <% if (error) { %>
+    <div class="feedback error"><%= error %></div>
+  <% } %>  
+<div class="single-proverb">
+<p><strong>Dari:</strong> <%= proverb.textDari %></p>
+<p><strong>Pashto:</strong> <%= proverb.textPashto %></p>
+<p><strong>English Translation:</strong> <%= proverb.translation %></p>
+<p><strong>Meaning:</strong> <%= proverb.meaning %></p>
+<p><strong>Category:</strong> <%= proverb.category %></p>
+<a href="/proverbs/<%= proverb.id %>/edit" style="text-decoration: none;">Edit</a>
+<form class="delete-form" action="/proverbs/<%= proverb.id %>/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this proverb?');">
+    <button class="delete-btn" type="submit">Delete</button>
+</form>
+
+</div>
+<a class="redirect" style="text-decoration: none;" href="/">Back to Home</a>
+
+<%- include('partials/footer') %>

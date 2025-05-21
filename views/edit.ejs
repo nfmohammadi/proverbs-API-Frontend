@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<h1>Edit Proverb</h1>
+<% if (success) { %>
+    <div class="feedback success"><%= success %></div>
+  <% } %>
+  <% if (error) { %>
+    <div class="feedback error"><%= error %></div>
+  <% } %>  
+<div class="edit-form">
+<form action="/proverbs/<%=  proverb.id %>/edit" method="POST">
+    <label for="textDari">Text (Dari):</label>
+    <input type="text" name="textDari" id="textDari" value="<%= proverb.textDari %>" >
+
+    <label for="textPashto">Text (Pashto):</label>
+    <input type="text" name="textPashto" id="textPashto" value="<%= proverb.textPashto %>" >
+
+    <label for="translation">Translation (En):</label>
+    <input type="text" name="translation" id="translation" value="<%= proverb.translation %>" >
+
+    <label for="meaning">Meaning:</label>
+    <input type="text" name="meaning" id="meaning" value="<%= proverb.meaning %>" >
+
+    <label for="category">Category:</label>
+    <input type="text" name="category" id="category" value="<%= proverb.category %>" >
+
+    <button class="update-btn" type="submit">Update Proverb</button>
+    <a class="redirect" style="text-decoration: none;" href="/proverbs/<%= proverb.id %>">Cancel</a>
+</form>
+
+</div>
+
+
+
+<%- include('partials/footer') %>

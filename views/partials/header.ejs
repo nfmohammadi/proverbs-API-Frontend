@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afghan Proverbs & Sayings</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <button id="menu-toggle" aria-label="Toggle Menue">☰</button>
+        <nav id="navbar">
+            <div class="nav-container">
+                <a href="/">🏠Home</a>
+                <a href="/new">➕Add Proverb</a>
+                <a href="/proverbs/random">🔀Random Proverb</a>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+    
+        menuToggle.addEventListener('click', function() {
+            navbar.classList.toggle('visible');
+        });
+
+        window.addEventListener('click', function(event) {
+        if (!navbar.contains(event.target) && event.target !== menuToggle) {
+            navbar.classList.remove('visible');
+        }
+    });
+    </script>
+    <main>
